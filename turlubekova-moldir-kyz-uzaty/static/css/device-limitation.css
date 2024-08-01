@@ -1,0 +1,16 @@
+.desktop-content {
+    display: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .mobile-content {
+        display: none;
+    }
+    .desktop-content {
+        display: flex;
+    }
+}
