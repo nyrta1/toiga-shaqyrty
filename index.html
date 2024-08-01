@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Перенаправление...</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+
+      if (id) {
+        fetch('redirects.json')
+          .then(response => response.json())
+          .then(data => {
+            const url = data[id];
+            if (url) {
+              window.location.href = url;
+            } else {
+              document.body.innerHTML = `<p>URL для ID ${id} не найден. Пожалуйста, проверьте ID и попробуйте снова.</p>`;
+            }
+          })
+          .catch(error => {
+            document.body.innerHTML = `<p>Не удалось получить данные для перенаправления. Пожалуйста, попробуйте позже.</p>`;
+            console.error('Ошибка при получении JSON:', error);
+          });
+      } else {
+        document.body.innerHTML = '<p>ID не указан. Пожалуйста, добавьте ID в параметры URL.</p>';
+      }
+    });
+  </script>
+</head>
+<body>
+  <p>Перенаправление...</p>
+</body>
+</html>
