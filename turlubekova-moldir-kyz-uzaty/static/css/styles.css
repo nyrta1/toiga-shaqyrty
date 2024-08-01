@@ -37,3 +37,86 @@ body, html {
     padding-bottom: 5px;
     margin: 0;
 }
+
+.rotating-container {
+    position: absolute;
+    bottom: 20%; /* Adjust this value to position the button */
+    left: 50%;  /* Adjust this value to position the button */
+    transform: translate(-50%, 0); /* Center the button horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: none;
+    color: #007bff;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque background on hover */
+}
+
+.rotating-container {
+    position: absolute;
+    bottom: 26%; /* Adjust this value to position the button */
+    left: 84%;  /* Adjust this value to position the button */
+    transform: translate(-50%, 0); /* Center the button horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: rgb(255, 215, 0);
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 0px 25px rgba(255, 215, 0, 1);
+    transition: background-color 0.3s ease;
+}
+
+.play-button i {
+    display: block;
+    font-size: 60px;
+}
+
+.play-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#rotating-text {
+    position: absolute;
+    font-size: 11px;
+    color: #FFD700;
+    animation: rotate 7s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
