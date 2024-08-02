@@ -9,10 +9,6 @@
     <!-- Importing CSS -->
     <link rel="stylesheet" href="./static/css/common.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/VincentLoy/simplyCountdown.js@develop/css/simplyCountdown.theme.default.css" />
-    
-    <!-- JS Library imports -->
-    <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/VincentLoy/simplyCountdown.js@develop/dist/simplyCountdown.min.js"></script>
 </head>
 <body>
     <div class="mobile-content">
@@ -87,9 +83,36 @@
         </div>
 
         <div class="main-part">
-            <h1 class="pacifico-regular">Келіңіздер,<br>тойымыздың қадірлі қонағы болыңыздар!</h1>
+            <h1 class="pacifico-regular">Тойға келесіз бе?</h1>
         </div>
 
+        <div class="form-container nunito-regular">
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="fullName">Толық аты-жөніңізді жазыңыз:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Аты-жөніңіз..." required>
+                </div>
+                <div class="form-group">
+                    <label for="partnerFullName">Жолдасыңыздың толық аты-жөніңізді жазыңыз: (Егерде бар болса)</label>
+                    <input type="text" id="partnerFullName" name="partnerFullName" placeholder="Жолдасыңыздың аты-жөні...">
+                </div>
+                <div class="form-group">
+                    <div class="radio-group">
+                        <input type="radio" id="comingYes" name="coming" value="yes" required>
+                        <label for="comingYes">Әрине, келемін</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="comingNo" name="coming" value="no" required>
+                        <label for="comingNo">Өкінішке орай, келе алмаймын</label>
+                    </div>
+                </div>
+                <button type="submit">Жіберу</button>
+            </form>
+        </div>
+
+        <div class="main-part">
+            <h1 class="pacifico-regular">Келіңіздер,<br>тойымыздың қадірлі қонағы болыңыздар!</h1>
+        </div>
         
         <div class="image-border-tb">
             <img src="./static/images/kazakh-oyu.png" alt="Kazakh Oyu" class="center">
@@ -114,39 +137,21 @@
 
     <audio id="music" src="https://hitmus.kz/uploads/files/2022-05/dosmukasan-toby_-_toi-jyry_(hitmuz.kz).mp3"></audio>
 </body>
-    <script>
-        document.getElementById("play-music-button-icon").className = "bi bi-play-fill";
-        const circleType = new CircleType(document.getElementById('rotating-text'));
+<!-- JS Library imports -->
+<script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/VincentLoy/simplyCountdown.js@develop/dist/simplyCountdown.min.js"></script>
 
-        function playMusic() {
-            var music = document.getElementById("music");
-            var button = document.getElementById("play-music-button-icon");
-            if (music.paused) {
-                button.className = "bi bi-pause-fill"
-                music.play();
-            } else {
-                button.className = "bi bi-play-fill"
-                music.pause();  
-            }
-        }
-    </script>
+<!-- Including Custom JavaScript files -->
+<script src="./static/js/music.js"></script>
+<script src="./static/js/countdown.js"></script>
 
-    <script>
-        simplyCountdown('.simply-countdown2', {
-            year: 2024, 
-            month: 8,
-            day: 27,
-            hours: 19,
-            minutes: 0,
-            seconds: 0,
-            words: {
-                days: { singular: 'күн', plural: 'күндер' },
-                hours: { singular: 'сағат', plural: 'сағаттар' },
-                minutes: { singular: 'минут', plural: 'минуттар' },
-                seconds: { singular: 'секунд', plural: 'секундтар' }
-            },
-            plural: false, 
-            refresh: 1000,
-        });
-    </script>    
+<!-- WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! -->
+
+<!-- IF YOU OPENED THE DEVELOPMENT TOOLS, I KNOW YOU ARE A VERY SMART PERSON -->
+<!-- BUT PLEASE DO NOT SPAM MY SUPABASE DATABASE PLS! -->
+
+<!-- ЕСЛИ ВЫ ОТКРЫЛИ ИНСТРУМЕНТЫ РАЗРАБОТЧИКА, Я ЗНАЮ, ЧТО ВЫ ОЧЕНЬ УМНЫЙ ЧЕЛОВЕК -->
+<!-- НО ПОЖАЛУЙСТА НЕ СПАМЬТЕ МОЮ БАЗУ ДАННЫХ SUPABASE! -->
+<!-- ПОЖАЛУЙСТА НЕ УНИЧТОЖАЙТЕ ЧЕЙ-ТО ТРУД! -->
+<script type="module" src="./static/js/supabase.js"></script>
 </html>
