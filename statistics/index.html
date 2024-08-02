@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қонақтар тізімі</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="text-center py-3">
+        <h2>Той қонақтар тізімі 👨‍👩‍👧‍👦</h2>
+    </div>
+
+    <div class="container">
+        <div class="row mb-3">
+            <div class="mb-2 col-xs-12 text-end">
+                <button id="refreshButton" class="btn btn-primary ">Ақпаратты жаңарту 🔄</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+            <table class="table table-bordered table-hover dt-responsive cell-border stripe">
+                <thead>
+                    <tr>
+                        <th>Қонақтың аты-жөні 🤵</th>
+                        <th>Жұбайының аты-жөні 👩‍💼</th>
+                        <th>Тойға келеді ме? 🏃‍♀️🏃‍♂️</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

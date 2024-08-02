@@ -9,7 +9,7 @@ async function getData() {
         const response = await fetch(apiUrl, {
             method: 'GET',
             headers: {
-                'apiKey': `${apiKey}?select=*`,
+                'apiKey': apiKey,
                 'Content-Type': 'application/json'
             }
         });
