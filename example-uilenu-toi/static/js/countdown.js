@@ -12,5 +12,5 @@ simplyCountdown('.simply-countdown2', {
         seconds: { singular: 'секунд', plural: 'секундтар' }
     },
     plural: false, 
-    refresh: 1000,
+    refresh: 1000
 });

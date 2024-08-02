@@ -29,6 +29,7 @@ input[type="text"] {
 }
 
 button {
+    display: block;
     background-color: #a30e0e;
     color: #fff;
     padding: 10px 20px;
