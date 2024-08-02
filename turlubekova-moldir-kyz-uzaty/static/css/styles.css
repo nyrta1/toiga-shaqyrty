@@ -11,7 +11,7 @@ body, html {
     justify-content: center;
     align-items: flex-end;
     width: 100%;
-    height: 100vh;
+    height: 100svh;
     background-image: url('../images/kazakh-a-man-and-a-wonem.png');
     background-size: cover;
     background-position: center;
@@ -40,16 +40,16 @@ body, html {
 
 .rotating-container {
     position: absolute;
-    bottom: 20%; /* Adjust this value to position the button */
-    left: 50%;  /* Adjust this value to position the button */
-    transform: translate(-50%, 0); /* Center the button horizontally */
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .play-button {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    background-color: rgba(255, 255, 255, 0.8);
     border: none;
     color: #007bff;
     padding: 20px;
@@ -64,14 +64,14 @@ body, html {
 }
 
 .play-button:hover {
-    background-color: rgba(255, 255, 255, 1); /* Fully opaque background on hover */
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .rotating-container {
     position: absolute;
-    bottom: 26%; /* Adjust this value to position the button */
-    left: 84%;  /* Adjust this value to position the button */
-    transform: translate(-50%, 0); /* Center the button horizontally */
+    bottom: 26%;
+    left: 80%;
+    transform: translate(-50%, 0);
     display: flex;
     align-items: center;
     justify-content: center;
