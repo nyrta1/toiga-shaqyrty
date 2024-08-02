@@ -1,0 +1,63 @@
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+.whatsapp-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #25D366; /* Button color */
+    border-radius: 50%;
+    width: 55px; /* Button width */
+    height: 55px; /* Button height */
+    color: #fff;
+    text-align: center;
+    line-height: 53px; /* Center the icon inside the button */
+    font-size: 35px; /* Icon size */
+    position: relative; /* For absolute positioning of pseudo-elements */
+    z-index: 9999;
+}
+
+.whatsapp-button a {
+    color: #fff;
+}
+
+.whatsapp-button:before,
+.whatsapp-button:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    border: 50%;
+    border: 1px solid #25D366; /* Color of animated waves */
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden; 
+}
+
+.whatsapp-button:after {
+    animation-delay: .5s;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
