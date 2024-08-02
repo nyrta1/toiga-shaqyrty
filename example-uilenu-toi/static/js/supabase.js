@@ -1,5 +1,7 @@
+// Get the current site URL
+const siteUrl = window.location.href;
 const apiUrl = "https://dmzvqfthrlptjundmrmr.supabase.co/rest/v1/guests_answers";
-const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtenZxZnRocmxwdGp1bmRtcm1yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI2MDQ2NDUsImV4cCI6MjAzODE4MDY0NX0.hHj218zyWSOQKfszx9_QhpdId0BGrjG5Vb7u_h31ma4";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtenZxZnRocmxwdGp1bmRtcm1yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI2MDQ2NDUsImV4cCI6MjAzODE4MDY0NX0.hHj218zyWSOQKfszx9_QhpdId0BGrjG5Vb7u_h31ma4";
 
 // Function to GET data
 async function getData() {
@@ -7,7 +9,7 @@ async function getData() {
         const response = await fetch(apiUrl, {
             method: 'GET',
             headers: {
-                'apikey': `${apikey}?select=*`,
+                'apiKey': `${apiKey}?select=*`,
                 'Content-Type': 'application/json'
             }
         });
@@ -28,7 +30,6 @@ async function getData() {
 document.getElementById('rsvpForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    // Fetch the redirects JSON
     let redirectData;
     try {
         const response = await fetch('https://raw.githubusercontent.com/nyrta1/toiga-shaqyrty/main/redirects.json');
@@ -41,10 +42,6 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(ev
         return;
     }
 
-    // Get the current site URL
-    const siteUrl = window.location.href;
-
-    // Check if the site URL matches any URL in the redirects JSON
     let matchingId = null;
     for (const [id, url] of Object.entries(redirectData)) {
         if (siteUrl.startsWith(url)) {
@@ -52,13 +49,6 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(ev
             break;
         }
     }
-
-    if (matchingId === null) {
-        console.log("No matching ID found.");
-        return;
-    }
-
-    console.log("Matching ID:", matchingId);
 
     const fullName = document.getElementById('fullName').value;
     const partnerFullName = document.getElementById('partnerFullName').value;
@@ -74,15 +64,20 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(ev
     const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
-            'apikey': apikey,
+            'apiKey': apiKey,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
     });
 
-    if (response.status >200 && response.status < 300) {
-        console.log("OK!");
+    const responseStatus = await response.status;
+
+    if (responseStatus < 200 || responseStatus > 299) {
+        alert("Что-то пошло не так 😥");
         return;
     }
-    console.log("BAD!")
+
+    window.dialog.showModal();
+    document.getElementById('question-for-form').style.display = 'none';
+    document.querySelector('.form-container').style.display = 'none';
 });

@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/VincentLoy/simplyCountdown.js@develop/css/simplyCountdown.theme.default.css" />
 </head>
 <body>
+    <!-- Device limitation -->
+    <div class="pc-message">
+        <p>Қап, әттеген-ай!😥 Бұл заманауи сайтта тойға шақыру билеттерін тек мобильді құрылғыдан көре аласыз. 🖥️</p>
+    </div>
+
     <div class="mobile-content">
         <div class="image-container comfortaa-regular">
             <div class="rotating-container">
@@ -82,7 +87,7 @@
             <img src="./static/images/kazakh-oyu-reverse.png" alt="Kazakh Oyu" class="center">
         </div>
 
-        <div class="main-part">
+        <div id="question-for-form" class="main-part">
             <h1 class="pacifico-regular">Тойға келесіз бе?</h1>
         </div>
 
@@ -108,7 +113,7 @@
                 </div>
                 <button type="submit">Жіберу</button>
             </form>
-        </div>        
+        </div>
 
         <div class="main-part">
             <h1 class="pacifico-regular">Келіңіздер,<br>тойымыздың қадірлі қонағы болыңыздар!</h1>
@@ -130,10 +135,18 @@
         </div>
     </div>
 
-    <!-- Device limitation -->
-    <div class="pc-message">
-        <p>Қап, әттеген-ай!😥 Бұл заманауи сайтта тойға шақыру билеттерін тек мобильді құрылғыдан көре аласыз. 🖥️</p>
-    </div>
+    <dialog id="dialog">
+        <div class="success-checkmark">
+            <div class="check-icon">
+                <span class="icon-line line-tip"></span>
+                <span class="icon-line line-long"></span>
+                <div class="icon-circle"></div>
+                <div class="icon-fix"></div>
+            </div>
+        </div>
+        <p>Жауабыңызға рахмет!</p>
+        <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+    </dialog>
 
     <audio id="music" src="https://hitmus.kz/uploads/files/2022-05/dosmukasan-toby_-_toi-jyry_(hitmuz.kz).mp3"></audio>
 </body>
