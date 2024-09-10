@@ -1,0 +1,32 @@
+.mobile-content {
+    display: none;
+}
+
+.pc-message {
+    display: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+@media only screen and (max-width: 558px) {
+    .mobile-content {
+        display: block;
+    }
+    .pc-message {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 559px) {
+    .mobile-content {
+        display: none;
+    }
+    .pc-message {
+        display: flex;
+    }
+}

@@ -41,7 +41,7 @@ $(document).ready(function() {
                     language: {
                         url: "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Kazakh.json"
                     },
-                    responsive: true
+                    responsive: true,
                 });
             }
         } catch (error) {

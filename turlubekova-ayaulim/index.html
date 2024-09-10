@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./static/images/happy-icon.png" />
+    <title>Қыз ұзату - Аяулым</title>
+
+    <!-- Importing CSS -->
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/VincentLoy/simplyCountdown.js@develop/css/simplyCountdown.theme.default.css" />
+</head>
+<body>
+    <!-- Device limitation -->
+    <div class="pc-message">
+        <p>Қап, әттеген-ай!😥 Бұл заманауи сайтта тойға шақыру билеттерін тек мобильді құрылғыдан көре аласыз. 🖥️</p>
+    </div>
+
+    <div class="mobile-content">
+        <div class="image-container comfortaa-regular">
+            <div class="rotating-container">
+                <button class="play-button" onclick="playMusic()">
+                    <i id="play-music-button-icon"></i>
+                </button>
+                <h6 id="rotating-text">Музыканы қосу үшiн үстiнен басыңызᅠ</h6>
+            </div>
+            <div class="centered-text">
+                <h2 class="marck-script-regular">Аяулым</h2>
+                <h5>ҚЫЗ ҰЗАТУ</h5>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <div class="image-border-tb">
+            <img src="./static/images/kazakh-oyu.png" alt="Kazakh Oyu" class="center">
+        </div>
+
+        <div class="main-part">
+            <h1 class="pacifico-regular">Құрметті қонақтар!</h1>
+            <h5 class="nunito-regular">Сіздерді ұлымыз</h5>
+            <h1 class="pacifico-regular">Жалғас</h1>
+            <h5 class="nunito-regular">пен келініміз</h5>
+            <h1 class="pacifico-regular">Aйнұрдың</h1>
+            <h5 class="nunito-regular">үйлену тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</h5>
+        </div>
+
+        <div class="image-border-tb">
+            <img src="./static/images/kazakh-oyu-reverse.png" alt="Kazakh Oyu" class="center">
+        </div>
+
+        <div class="main-part">
+            <h1 class="pacifico-regular">Той салтанаты:</h1>
+            <h5 class="nunito-regular">27 тамыз, 2024 жыл</h5>
+        </div>
+
+        <img src="./static/images/kz-calendar-august.png" alt="Kazakh August Calendar" class="center-calendar">
+
+        <div class="main-part">
+            <h5 class="nunito-regular">Беташар - 19:00</h5>
+            <h5 class="nunito-regular">Той салтанаты - 20:00</h5>
+        </div>
+
+        <div class="main-part">
+            <h1 class="pacifico-regular">Тойға дейін:</h1>
+        </div>
+
+        <div class="simply-countdown2 comfortaa-regular"></div>
+
+        <div class="main-part">
+            <h1 class="pacifico-regular">Мекен-жайымыз:</h1>
+
+            <div class="styled-map">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5535.973820277598!2d82.0855656653766!3d46.07130217798521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x429b5bb6619d3a1f%3A0x67093b09cefdb6e1!2z0KLTqdGA0LUg0LzQtdC50YDQsNC80YXQsNC90LDRgdGL!5e0!3m2!1sru!2skz!4v1722599252504!5m2!1sru!2skz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <h5 class="nunito-regular">Абай облысы, Үржар ауданы, Қабанбай ауылы, <strong>Төре кафесі</strong></h5>
+        </div>
+
+        <div class="image-border-tb">
+            <img src="./static/images/kazakh-oyu.png" alt="Kazakh Oyu" class="center">
+        </div>
+
+        <div class="main-part">
+            <h1 class="pacifico-regular">Той иелері:</h1>
+            <h2 class="nunito-regular">Абылай - Балым</h2>
+        </div>
+
+        <div class="image-border-tb">
+            <img src="./static/images/kazakh-oyu-reverse.png" alt="Kazakh Oyu" class="center">
+        </div>
+
+        <div id="question-for-form" class="main-part">
+            <h1 class="pacifico-regular">Тойға келесіз бе?</h1>
+        </div>
+
+        <div class="form-container nunito-regular">
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="fullName">Толық аты-жөніңізді жазыңыз:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Аты-жөніңіз..." required maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label for="partnerFullName">Жолдасыңыздың толық аты-жөніңізді жазыңыз: (Егерде бар болса)</label>
+                    <input type="text" id="partnerFullName" name="partnerFullName" placeholder="Жолдасыңыздың аты-жөні..." maxlength="50">
+                </div>
+                <div class="form-group">
+                    <div class="radio-group">
+                        <input type="radio" id="comingYes" name="coming" value="yes" required>
+                        <label for="comingYes">Әрине, келемін</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="comingNo" name="coming" value="no" required>
+                        <label for="comingNo">Өкінішке орай, келе алмаймын</label>
+                    </div>
+                </div>
+                <button type="submit">Жіберу</button>
+            </form>
+        </div>
+
+        <div class="main-part">
+            <h1 class="pacifico-regular">Келіңіздер,<br>тойымыздың қадірлі қонағы болыңыздар!</h1>
+        </div>
+        
+        <div class="image-border-tb">
+            <img src="./static/images/kazakh-oyu.png" alt="Kazakh Oyu" class="center">
+        </div>
+
+        <div class="main-part">
+            <h5 class="nunito-regular">Егер сізге де заманауи онлайн шақырту билеттері қажет болса, төмендегі байланыс тәсілдері арқылы байланыса аласыз.</h5>
+
+        <div class="contact">
+            <a href="https://wa.me/77474152449" target="_blank" title="Написать в WhatsApp" rel="noopener noreferrer">
+                <div class="whatsapp-button">
+                    <i class="bi bi-whatsapp"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <dialog id="dialog">
+        <div class="success-checkmark">
+            <div class="check-icon">
+                <span class="icon-line line-tip"></span>
+                <span class="icon-line line-long"></span>
+                <div class="icon-circle"></div>
+                <div class="icon-fix"></div>
+            </div>
+        </div>
+        <p>Жауабыңызға рахмет!</p>
+        <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+    </dialog>
+
+    <audio id="music" src="./static/audio/karakat-music-remastered.mp3"></audio>
+</body>
+<!-- JS Library imports -->
+<script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/VincentLoy/simplyCountdown.js@develop/dist/simplyCountdown.min.js"></script>
+
+<!-- Including Custom JavaScript files -->
+<script src="./static/js/music.js"></script>
+<script src="./static/js/countdown.js"></script>
+
+<!-- WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! -->
+
+<!-- IF YOU OPENED THE DEVELOPMENT TOOLS, I KNOW YOU ARE A VERY SMART PERSON -->
+<!-- BUT PLEASE DO NOT SPAM MY SUPABASE DATABASE PLS! -->
+
+<!-- ЕСЛИ ВЫ ОТКРЫЛИ ИНСТРУМЕНТЫ РАЗРАБОТЧИКА, Я ЗНАЮ, ЧТО ВЫ ОЧЕНЬ УМНЫЙ ЧЕЛОВЕК -->
+<!-- НО ПОЖАЛУЙСТА НЕ СПАМЬТЕ МОЮ БАЗУ ДАННЫХ SUPABASE! -->
+<!-- ПОЖАЛУЙСТА НЕ УНИЧТОЖАЙТЕ ЧЕЙ-ТО ТРУД! -->
+<script type="module" src="./static/js/supabase.js"></script>
+</html>
