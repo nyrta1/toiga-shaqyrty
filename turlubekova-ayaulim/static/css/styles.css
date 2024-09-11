@@ -6,6 +6,7 @@ body, html {
 
 .container {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -54,7 +55,6 @@ body, html {
 .centered-text {
     font-size: 2.2em;
     text-align: center;
-    padding: 10px;
     width: 100%;
     position: absolute;
     top: 30px;
@@ -199,6 +199,7 @@ body, html {
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
+    z-index: 2;
 }
 
 .main-part h1 {
@@ -226,6 +227,37 @@ body, html {
     line-height: 1.6;
 }
 
+.colabration-date-part {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 0.8;
+}
+
+.colabration-date-part h1 {
+    font-size: 30px;
+    color: #505050;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.colabration-date-part h2 {
+    font-size: 45px;
+    font-weight: 500;
+    color: #56624b;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.colabration-date-part img {
+    width: 300px;
+    height: 300px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
 .shakyrtu-part {
     text-align: center;
     padding-left: 10px;
@@ -249,6 +281,37 @@ body, html {
     line-height: 1.6;
 }
 
+.owner-part {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.owner-part h2 {
+    font-size: 32px;
+    font-weight: 500;
+    color: #505050;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.owner-part h3 {
+    font-size: 37px;
+    color: #a87b4b;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.owner-part h4 {
+    font-size: 45px;
+    color: #868f7d;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
 .styled-map {
     display: flex;
     justify-content: center;
@@ -260,4 +323,21 @@ body, html {
     height: 300px;
     padding: 5px;
     border-radius: 18px;
+}
+
+.flower-image-top {
+    position: absolute;
+    top: -15px;
+    left: -30px;
+    width: 150px;
+    z-index: 1;
+}
+
+.flower-image-under {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 150px;
+    z-index: 1;
+    transform: rotate(180deg)
 }
