@@ -64,6 +64,7 @@
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-top">
             <div class="shakyrtu-part">
                 <h2 class="marck-script-regular">Мекен-жайымыз:</h2>
+                <div id="map" style="height:250px; margin-top: 20px; margin-bottom: 20px;"></div>
                 <h3 class="montserrat-regular">СЕМЕЙ ҚАЛАСЫ, БЕЙСЕМБАЕВА МУХТАРХАН КӨШЕСІ,<br> “КЕРУЕН” МЕЙРАМХАНАСЫ</h3>
             </div>
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-under">
@@ -79,6 +80,39 @@
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-under">
         </div>
 
+        <div class="container" id="question-for-form">
+            <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-top">
+            
+            <div class="owner-part">
+                <h1 class="pacifico-regular">Тойға келесіз бе?</h1>
+
+                <div class="form-container nunito-regular">
+                    <form id="rsvpForm">
+                        <div class="form-group">
+                            <label for="fullName">Толық аты-жөніңізді жазыңыз:</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Аты-жөніңіз..." required maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="partnerFullName">Жолдасыңыздың толық аты-жөніңізді жазыңыз: (Егерде бар болса)</label>
+                            <input type="text" id="partnerFullName" name="partnerFullName" placeholder="Жолдасыңыздың аты-жөні..." maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <div class="radio-group">
+                                <input type="radio" id="comingYes" name="coming" value="yes" required>
+                                <label for="comingYes">Әрине, келемін</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="comingNo" name="coming" value="no" required>
+                                <label for="comingNo">Өкінішке орай, келе алмаймын</label>
+                            </div>
+                        </div>
+                        <button type="submit">Жіберу</button>
+                    </form>
+                </div>
+            </div>
+            <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-under">
+        </div>
+
         <div class="underline"></div>
         <div class="main-part">
             <h5 class="nunito-regular">Егер сізге де заманауи онлайн шақырту билеттері қажет болса, төмендегі байланыс тәсілдері арқылы байланыса аласыз.</h5>
@@ -90,6 +124,19 @@
                 </div>
             </a>
         </div>
+
+        <dialog id="dialog">
+            <div class="success-checkmark">
+                <div class="check-icon">
+                    <span class="icon-line line-tip"></span>
+                    <span class="icon-line line-long"></span>
+                    <div class="icon-circle"></div>
+                    <div class="icon-fix"></div>
+                </div>
+            </div>
+            <p>Жауабыңызға рахмет!</p>
+            <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+        </dialog>
     </div>
 
     <audio id="music" src="./static/audio/karakat-music-remastered.mp3"></audio>
@@ -97,6 +144,7 @@
 <!-- JS Library imports -->
 <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/VincentLoy/simplyCountdown.js@develop/dist/simplyCountdown.min.js"></script>
+<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 
 <!-- Including Custom JavaScript files -->
 <script src="./static/js/music.js"></script>
@@ -111,4 +159,51 @@
 <!-- НО ПОЖАЛУЙСТА НЕ СПАМЬТЕ МОЮ БАЗУ ДАННЫХ SUPABASE! -->
 <!-- ПОЖАЛУЙСТА НЕ УНИЧТОЖАЙТЕ ЧЕЙ-ТО ТРУД! -->
 <script type="module" src="./static/js/supabase.js"></script>
+
+<script>
+    DG.then(function() {
+        var map = DG.map('map', {
+            center: [50.405037, 80.205180],
+            zoom: 16
+        });
+
+        DG.marker([50.405, 80.205180]).addTo(map).bindPopup('"Керуен" мейрамханасы');
+    });
+</script>
+
+<script>
+    const containers = document.querySelectorAll('.container');
+    let containerHeights = Array.from(containers).map(container => container.offsetHeight);
+    let currentIndex = 0;
+    let isScrolling = false;
+
+    function scrollToContainer(index) {
+        if (index >= 0 && index < containers.length) {
+            window.scrollTo({
+                top: Array.from(containers).slice(0, index).reduce((sum, container) => sum + container.offsetHeight, 0),
+                behavior: 'smooth'
+            });
+            currentIndex = index;
+        }
+    }
+
+    function handleScrollEvent(event) {
+        if (isScrolling) return;
+
+        isScrolling = true;
+        setTimeout(() => {
+            isScrolling = false;
+        }, 600);
+
+        if (event.deltaY > 0) {
+            scrollToContainer(currentIndex + 1);
+        } else {
+            scrollToContainer(currentIndex - 1);
+        }
+
+        event.preventDefault();
+    }
+
+    window.addEventListener('wheel', handleScrollEvent);
+</script>
 </html>
