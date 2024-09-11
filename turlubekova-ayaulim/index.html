@@ -20,7 +20,7 @@
     </div>
 
     <div class="mobile-content">
-        <div class="container" id="section1">
+        <div class="container">
             <div class="image-container comfortaa-regular">
                 <div class="rotating-container">
                     <button class="play-button" onclick="playMusic()">
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <div class="container" id="section2">
+        <div class="container">
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-top">
             <div class="main-part">
                 <h1 class="montserrat-regular">Құрметті <br>қонақтар!</h1>
@@ -48,7 +48,7 @@
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-under">
         </div>
 
-        <div class="container" id="section3">
+        <div class="container">
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-top">
             <div class="colabration-date-part">
                 <h2 class="marck-script-regular">Казан (Октябрь)</h2>
@@ -60,7 +60,7 @@
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-under">
         </div>
 
-        <div class="container" id="section4">
+        <div class="container">
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-top">
             <div class="shakyrtu-part">
                 <h2 class="marck-script-regular">Мекен-жайымыз:</h2>
@@ -69,7 +69,7 @@
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-under">
         </div>
 
-        <div class="container" id="section5">
+        <div class="container">
             <img src="./static/images/flower-corner.png" alt="Flower Decoration" class="flower-image-top">
             <div class="owner-part">
                 <h2 class="montserrat-regular">ТОЙ ИЕЛЕРІ:</h2>
@@ -111,49 +111,4 @@
 <!-- НО ПОЖАЛУЙСТА НЕ СПАМЬТЕ МОЮ БАЗУ ДАННЫХ SUPABASE! -->
 <!-- ПОЖАЛУЙСТА НЕ УНИЧТОЖАЙТЕ ЧЕЙ-ТО ТРУД! -->
 <script type="module" src="./static/js/supabase.js"></script>
-
-<script>
-    let currentSection = 0; // Track the current section index
-    const containers = document.querySelectorAll('.container'); // Get all containers
-    
-    // Function to scroll to a specific section smoothly
-    function scrollToSection(sectionIndex) {
-        const section = containers[sectionIndex];
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', function () {
-        const scrollPosition = window.scrollY; // Get current scroll position
-        const windowHeight = window.innerHeight; // Get height of the window
-    
-        // Determine the current section based on scroll position
-        for (let i = 0; i < containers.length; i++) {
-            const container = containers[i];
-            const containerTop = container.offsetTop;
-            const containerHeight = container.offsetHeight;
-    
-            if (scrollPosition >= containerTop && scrollPosition < containerTop + containerHeight) {
-                currentSection = i;
-            }
-        }
-    });
-    
-    // Detect scroll direction and scroll to the next section
-    window.addEventListener('wheel', function (event) {
-        if (event.deltaY > 0) {
-            // Scroll down
-            if (currentSection < containers.length - 1) {
-                currentSection++;
-                scrollToSection(currentSection);
-            }
-        } else {
-            // Scroll up
-            if (currentSection > 0) {
-                currentSection--;
-                scrollToSection(currentSection);
-            }
-        }
-    });
-    </script>    
 </html>
