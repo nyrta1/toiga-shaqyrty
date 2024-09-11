@@ -4,6 +4,10 @@ body, html {
     width: 100%;
 }
 
+* {
+    border: 1px solid red;
+}
+
 .container {
     display: flex;
     position: relative;
@@ -336,7 +340,7 @@ body, html {
 .flower-image-under {
     position: absolute;
     bottom: -30px;
-    right: -30px;
+    right: 0px;
     width: 150px;
     z-index: 1;
     transform: rotate(180deg)
